@@ -53,7 +53,6 @@ export class SideBySideComponent implements OnInit {
       this.infoApi.getInfo(name)
       .subscribe((data:Info) => {
         this.infos = data;
-        console.log(this.infos)
       });
     }  
 } 
