@@ -1,0 +1,57 @@
+
+    .card{
+        // background: lightgrey;
+        max-height:350px;
+        max-width:500px;
+        // overflow:auto;
+    }
+
+    .e-card {
+        background: lightgrey;
+        max-width:500px;
+        margin-bottom: 8px;
+    }
+    .e-cards {
+        background: lightgrey;
+        max-width:500px;
+        margin-bottom: 8px;
+    }
+    
+    .content{
+        font-style: italic;
+        text-shadow: 0px 1px 1px rgb(170, 170, 170);
+    }
+
+    .spinner {
+        position: absolute;
+        width:50%;
+        top: 90%;
+        left: 70%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .top{
+        display:flex;
+        justify-content: space-around;
+        border: 3px solid rgb(187, 185, 185);
+        border-radius: 3px;
+        box-shadow: 2px 2px 2px rgb(100, 100, 100) ;
+    }
+
+    .tracks{
+        width: 50%;
+    }
+
+    .albums{
+        width: 50%;
+    }
+
+    .titles{
+       text-align: center;
+    }
+    
+    .vertical {
+        border-left: 2px solid rgb(141, 141, 141);
+    }

@@ -1,0 +1,43 @@
+  .title{
+    margin-top: 3%;
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  .country{
+    margin-left: 4%;
+  }
+  
+ .card {
+    width: 250px;
+    background: lightgrey;
+  }
+
+  .mat-grid-tile-content{
+    height: 20%;
+  }
+
+  .img{
+      margin-left: auto;
+  }
+
+.list{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left:5%
+}
+
+.item {
+  list-style-type: none;
+  width: 100%
+}
+.list > li {
+  flex: 50%;
+  margin-bottom: 10px;
+ 
+}
+
+  
+
+

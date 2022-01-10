@@ -1,0 +1,42 @@
+<!-- <div class="view">
+    <app-search></app-search>
+    <app-artist-details></app-artist-details>
+<div>
+    <app-search></app-search>
+    <app-artist-details></app-artist-details>
+</div>
+</div> -->
+<div>
+    <form >
+        <mat-form-field appearance="fill">  
+          <input #searchBox (input)="search(searchBox.value)"
+                 type="search" 
+                 placeholder="Search" 
+                 aria-label="Search"
+                 matInput
+                 [matAutocomplete]="auto">             
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let artist of artists$ | async" [value]="artist.name" (click)="onSelect(artist)">
+              {{artist.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+</div>
+<div *ngIf="isShown">
+    <div class="card">
+        <mat-card class="e-card" *ngIf="this.infos !=undefined">
+         <mat-card-title-group >
+           <mat-card-title>{{infos.name}}</mat-card-title>
+           <mat-card-subtitle><a [href]="infos.url"> Website</a></mat-card-subtitle>
+           <mat-card-subtitle>Listeners : {{infos.stats.listeners}}</mat-card-subtitle>
+           <mat-card-subtitle>Plays: {{infos.stats.playcount}}</mat-card-subtitle>
+           <img mat-card-md-image [src]="infos.image[0]['#text']" >      
+         </mat-card-title-group>
+         <br>
+         <mat-divider></mat-divider>
+         <mat-card-content class="content">
+           {{infos.bio.summary.substring(0,infos.bio.summary.indexOf('<'))}}
+           <mat-card-subtitle>Published in {{infos.bio.published}}</mat-card-subtitle>
+         </mat-card-content>
+

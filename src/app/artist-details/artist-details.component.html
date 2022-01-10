@@ -1,0 +1,32 @@
+   <div class="card">
+   <mat-card class="e-card" *ngIf="this.infos !=undefined">
+    <mat-card-title-group >
+      <mat-card-title>{{infos.name}}</mat-card-title>
+      <mat-card-subtitle><a [href]="infos.url"> Website</a></mat-card-subtitle>
+      <mat-card-subtitle>Listeners : {{infos.stats.listeners}}</mat-card-subtitle>
+      <mat-card-subtitle>Plays: {{infos.stats.playcount}}</mat-card-subtitle>
+      <img mat-card-lg-image [src]="infos.image[0]['#text']" >      
+    </mat-card-title-group>
+    <mat-card-content class="content">
+      {{infos.bio.summary.substring(0,infos.bio.summary.indexOf('<'))}}
+    </mat-card-content>
+    <div class="spinner">
+      <mat-spinner *ngIf="this.albums ==undefined || this.tracks ==undefined"  ></mat-spinner>
+      </div>
+    <div class= "top" *ngIf="this.albums !=undefined && this.tracks !=undefined">
+      <div class="tracks">
+        <h3 class="titles"><strong>TOP 5 Tracks</strong></h3>
+          <ol>
+            <li class="titles" *ngFor="let track of tracks">{{track.name}}</li>
+          </ol>
+      </div>
+      <div class = "vertical"></div>
+      <div class="albums">
+        <h3 class="titles"><strong>TOP 5 Albums</strong></h3>
+          <ol >
+           <li class="titles" *ngFor="let album of albums">{{album.name}}</li>
+          </ol>
+      </div>
+    </div>
+  </mat-card>
+

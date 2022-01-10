@@ -1,0 +1,17 @@
+  .title {
+      vertical-align: middle;
+      font-size: x-large;
+  }
+
+  .fill-remaining-space {
+    flex: 1 2 auto;
+  }
+
+  .sidebyside:hover{
+    color: lightgrey;
+  }
+
+  .view{
+  display:flex;
+  justify-content:space-around;
+  }

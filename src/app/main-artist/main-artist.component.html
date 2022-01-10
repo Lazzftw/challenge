@@ -1,0 +1,35 @@
+<h2 class="title">Top 10 Artists</h2>
+<article>
+  <form class="country">
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <select matNativeControl (change)="selectChangeHandler($event)">
+        <option value="spain">Spain SP </option>
+        <option value="italy">Italy IT</option>
+        <option value="germany">Germany DE</option>
+      </select>
+    </mat-form-field>
+  </form>
+  <mat-spinner *ngIf="isLoadingUsers"></mat-spinner>
+</article>
+
+<div>
+  <ul class="list">
+   <li class="item" *ngFor="let artist of artists ;let indexOfelement=index;">
+    <mat-card class="card">
+      <mat-card-title-group>
+        <mat-card-title (click)="onSelect(artist)">{{artist.name}}</mat-card-title>
+        <mat-card-subtitle><a [href]="artist.url"> Website</a></mat-card-subtitle>
+        <img class="img" mat-card-sm-image [src]="artist.image[0]['#text']" >
+        <span matBadge={{indexOfelement+1}} matBadgeColor="warn"></span>
+      </mat-card-title-group>
+      <mat-card-content>
+        Listeners : {{artist.listeners}}
+        <!-- MBID : {{artist.mbid}} -->
+      </mat-card-content>
+    </mat-card>
+  </li>
+   <mat-divider></mat-divider>
+</ul>
+   <mat-divider></mat-divider>
+ </div>

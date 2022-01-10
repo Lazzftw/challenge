@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  isShown: boolean = false ; 
+
+  toggleShow(){
+    this.isShown = !this.isShown;
+  }
+
 }
